@@ -262,3 +262,49 @@ footer {
 .map-section iframe {
     margin-top: -10px;
 }
+/* ================================
+   GLOBAL ANIMATION EFFECTS
+================================ */
+
+/* 进入页面淡入动画 */
+body {
+    opacity: 0;
+    animation: fadeInBody 1s forwards;
+}
+
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 滑动浮现动画 */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 按钮悬停动画 */
+button, .btn {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+button:hover, .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255,255,255,0.2);
+}
+
+/* 导航栏滚动时出现背景 */
+header {
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+header.scrolled {
+    background: #082036ee;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
