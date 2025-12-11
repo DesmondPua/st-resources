@@ -164,3 +164,34 @@ footer {
 .about-card ul li {
     margin-bottom: 8px;
 }
+/* Product grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    background: #0b2e4f;
+}
+
+.product-card {
+    background: #ffffff10;
+    padding: 25px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    border: 1px solid #ffffff30;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    background: #ffffff20;
+}
+
+.product-card h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    color: #ddd;
+}
