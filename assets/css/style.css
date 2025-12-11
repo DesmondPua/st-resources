@@ -108,3 +108,59 @@ footer {
     margin-top: 40px;
 }
 
+/* --------------------- */
+/* About Us Page Styles */
+/* --------------------- */
+
+.page-banner {
+    background: #0a2a43;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.page-banner h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.page-banner p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.about-card {
+    background: #0d1b27;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-left: 5px solid #0ea5e9;
+    border-radius: 5px;
+    color: #e7e7e7;
+}
+
+.about-card h3 {
+    color: #4cc3ff;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+.about-card p,
+.about-card ul li {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.about-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-card ul li {
+    margin-bottom: 8px;
+}
