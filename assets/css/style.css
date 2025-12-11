@@ -1,53 +1,110 @@
+/* General styles */
 body {
     margin: 0;
-    background: #111;
-    color: #eee;
+    background: #0a0f14;
+    color: #e0e0e0;
     font-family: Arial, sans-serif;
 }
 
-/* Header */
-header {
-    background: #0a2a43;
-    padding: 20px;
+/* Navigation Header */
+.topbar {
+    background: rgba(0, 40, 70, 0.95);
+    padding: 15px 0;
     text-align: center;
-    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.topbar h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 26px;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
+    color: #ccc;
     margin: 0 15px;
+    text-decoration: none;
     font-weight: bold;
+    font-size: 15px;
 }
 
-/* Hero section */
+nav a:hover {
+    color: #00aaff;
+}
+
+/* Hero Section */
 .hero {
-    background: #123456;
-    padding: 60px;
+    background: linear-gradient(to bottom, #00345b, #001a33);
+    padding: 100px 20px;
     text-align: center;
 }
 
 .hero h2 {
-    font-size: 32px;
+    font-size: 36px;
     margin-bottom: 10px;
+    color: #fff;
 }
 
-/* Content */
+.hero p {
+    font-size: 18px;
+    color: #b0c4de;
+}
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #0084ff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #006bd6;
+}
+
+/* Product Cards */
 .content {
-    max-width: 900px;
-    margin: auto;
-    padding: 30px;
+    padding: 50px 20px;
+    text-align: center;
 }
 
 .content h3 {
-    color: #66ccff;
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background: #11202c;
+    padding: 20px 30px;
+    border-radius: 10px;
+    width: 240px;
+    font-size: 16px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+    transition: transform 0.2s, background 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: #1c2f40;
 }
 
 /* Footer */
 footer {
-    background: #0a2a43;
-    padding: 20px;
+    background: #00263e;
     text-align: center;
-    color: white;
+    padding: 20px;
+    color: #ccc;
     margin-top: 40px;
 }
+
