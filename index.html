@@ -8,10 +8,10 @@
 </head>
 <body>
 
-<header class="topbar">
+<header>
     <h1>ST RESOURCES INDUSTRIES SDN BHD</h1>
     <nav>
-        <a href="index.html">Home</a>
+        <a class="active" href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="products.html">Products</a>
         <a href="events.html">Events</a>
@@ -19,79 +19,92 @@
     </nav>
 </header>
 
-<section class="hero reveal">
-    <div class="hero-content">
+<div class="page">
+
+    <!-- HERO SECTION -->
+    <section class="hero reveal">
         <h2>Your Trusted Industrial Materials Partner</h2>
         <p>Providing high-quality polymer materials for various industrial applications.</p>
-        <a class="btn-primary" href="products.html">View Products</a>
-    </div>
-</section>
+        <a href="products.html" class="btn-primary">View Products</a>
+    </section>
 
-<section class="content reveal">
-    <h3>Our Main Product Categories</h3>
+    <!-- PRODUCT CATEGORY SECTION -->
+    <section class="reveal">
+        <h3 class="section-title">Our Main Product Categories</h3>
+        <div class="card-container">
 
-    <div class="card-container">
-        <div class="card">Engineering Polymers</div>
-        <div class="card">Industrial Plastics</div>
-        <div class="card">Customized Material Solutions</div>
-        <div class="card">Application-based Polymer Products</div>
-    </div>
-</section>
+            <div class="card">
+                <h3>Engineering Polymers</h3>
+                <p>High-performance polymers used in demanding industrial applications.</p>
+            </div>
 
-<footer class="footer reveal">
+            <div class="card">
+                <h3>Industrial Plastics</h3>
+                <p>Cost-effective and versatile materials suitable for mass manufacturing.</p>
+            </div>
+
+            <div class="card">
+                <h3>Customized Material Solutions</h3>
+                <p>Tailored polymer formulations engineered to specific customer requirements.</p>
+            </div>
+
+            <div class="card">
+                <h3>Application-Specific Polymers</h3>
+                <p>Specialized materials designed for targeted performance applications.</p>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
     <div class="footer-container">
 
         <div class="footer-section">
             <h3>ST RESOURCES INDUSTRIES SDN BHD</h3>
-            <p>Your trusted partner in industrial polymer materials.</p>
+            <p>Your reliable supplier for quality polymer materials.</p>
         </div>
 
         <div class="footer-section">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <h3>Quick Links</h3>
+            <p><a href="index.html">Home</a></p>
+            <p><a href="about.html">About Us</a></p>
+            <p><a href="products.html">Products</a></p>
+            <p><a href="events.html">Events</a></p>
+            <p><a href="contact.html">Contact</a></p>
         </div>
 
         <div class="footer-section">
-            <h4>Contact Us</h4>
+            <h3>Contact</h3>
             <p>Email: info@stresources.com</p>
-            <p>Phone: +60-XXX-XXXXXX</p>
-            <p>Address: Selangor, Malaysia</p>
+            <p>Phone: +60 123-456 789</p>
         </div>
 
     </div>
 
     <div class="footer-bottom">
-        <p>© 2025 ST RESOURCES INDUSTRIES SDN BHD. All Rights Reserved.</p>
+        © 2025 ST RESOURCES INDUSTRIES SDN BHD. All Rights Reserved.
     </div>
 </footer>
 
-
+<!-- SCROLL ANIMATION SCRIPT -->
 <script>
-// --- Header scroll effect ---
-window.addEventListener("scroll", () => {
-    document.querySelector("header").classList.toggle("scrolled", window.scrollY > 30);
-});
+    const revealElements = document.querySelectorAll('.reveal');
 
-// --- Reveal on scroll animation ---
-const revealElements = document.querySelectorAll(".reveal");
-
-const revealOnScroll = () => {
-    for (let el of revealElements) {
-        const rect = el.getBoundingClientRect().top;
-        if (rect < window.innerHeight - 80) {
-            el.classList.add("visible");
+    function revealOnScroll() {
+        for (let el of revealElements) {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 60) {
+                el.classList.add('visible');
+            }
         }
     }
-};
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
 </script>
+
 </body>
 </html>
