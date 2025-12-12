@@ -3,27 +3,133 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact Test</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
+  <title>Contact — ST RESOURCES INDUSTRIES SDN BHD</title>
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Google reCAPTCHA v2 -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
 <body>
+
+  <!-- HEADER -->
   <header class="main-header">
-    <h1>TEST CONTACT HEADER</h1>
+    <div class="logo-container">
+      <img src="assets/images/Logo.png" alt="Company Logo" class="logo">
+      <h1>ST RESOURCES INDUSTRIES SDN BHD</h1>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="events.html">Events</a>
+      <a class="active" href="contact.html">Contact</a>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </header>
 
   <main class="page">
     <section>
-      <h2 class="section-title">CONTACT PAGE TEST</h2>
+      <h2 class="section-title" style="text-align:center;">Contact Us</h2>
 
-      <p style="color:white; font-size:22px;">
-        ✅ 如果你看到这句话，说明页面结构没问题。
-      </p>
+      <div class="contact-container">
 
-      <p style="color:white;">
-        📌 如果你 *看不到* 上面这句话，问题不是 CSS，就是你的 HTML 文件没正确上传。
-      </p>
+        <!-- LEFT: FORM -->
+        <div class="contact-box">
+          <h3>Send Us a Message</h3>
+          <p style="color:#bfcfd9;">Get in touch for inquiries, quotations or technical guidance.</p>
+
+          <!-- Formspree endpoint (already replaced with your ID) -->
+          <form id="contactForm" action="https://formspree.io/f/mgvgreaj" method="POST" onsubmit="return validateBeforeSubmit()">
+
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="phone" placeholder="Your Phone Number" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+
+            <!-- reCAPTCHA v2 (your site key) -->
+            <div style="margin:18px 0;">
+              <div class="g-recaptcha" data-sitekey="6LeOMiksAAAAAPtxBjGBLEfUKJjhz8lX0GA4Z1px"></div>
+            </div>
+
+            <button type="submit" class="btn-primary">Submit</button>
+          </form>
+
+          <p style="font-size:13px;color:#9fb0bf;margin-top:12px;">
+            Or email: <a href="mailto:cs@st-resources.com">cs@st-resources.com</a> — Phone: <a href="tel:+60127189322">+60 12-718 9322</a>
+          </p>
+        </div>
+
+        <!-- RIGHT: GOOGLE MAP -->
+        <div class="map-box">
+          <iframe
+            width="100%" height="420" frameborder="0" style="border:0"
+            src="https://www.google.com/maps?q=No+26,+Jalan+Cenderai+25,+Kawasan+Perindustrian+Kota+Putri,+81750+Masai,+Johor,+Malaysia&output=embed"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+      </div>
     </section>
   </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>ST RESOURCES INDUSTRIES SDN BHD</h4>
+        <p>Your trusted partner for industrial polymer materials.</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="about.html">About Us</a></p>
+        <p><a href="products.html">Products</a></p>
+        <p><a href="events.html">Events</a></p>
+        <p><a href="contact.html">Contact</a></p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>Email: <a href="mailto:cs@st-resources.com">cs@st-resources.com</a></p>
+        <p>Phone: <a href="tel:+60127189322">+60 12-718 9322</a></p>
+        <p>Address:<br>No 26, Jalan Cenderai 25,<br>Kawasan Perindustrian Kota Putri,<br>81750 Masai, Johor, Malaysia</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 ST RESOURCES INDUSTRIES SDN BHD. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      document.getElementById("mobileNav").classList.toggle("show");
+    }
+
+    // reCAPTCHA validation before submit
+    function validateBeforeSubmit(){
+      const response = grecaptcha.getResponse();
+      if(!response){
+        alert("Please complete the reCAPTCHA before submitting the form.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+
 </body>
 </html>
