@@ -241,3 +241,20 @@ section {
     background: #1f3d55;
     color: #fff;
 }
+/* Logo styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+}
+
+header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+}
