@@ -214,3 +214,30 @@ section {
     opacity: 1;
     transform: translateY(0px);
 }
+/* CONTACT PAGE LAYOUT */
+.contact-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-box {
+    background: #102b43;
+    padding: 30px;
+    border-radius: 10px;
+    width: 45%;
+    min-width: 280px;
+}
+
+.contact-box input,
+.contact-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: none;
+    background: #1f3d55;
+    color: #fff;
+}
