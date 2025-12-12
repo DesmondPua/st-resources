@@ -13,15 +13,8 @@ body {
     overflow-x: hidden; /* 防止横向滚动 */
 }
 
-/* GLOBAL CONTAINER */
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-
 /* --------------------------------
-   HEADER / NAVBAR
+   HEADER (统一后的导航栏)
 -----------------------------------*/
 .main-header {
     width: 100%;
@@ -29,14 +22,12 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 12px 40px;
+    padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(255,255,255,0.08);
-    backdrop-filter: blur(6px);
 }
-
 
 .logo-container {
     display: flex;
@@ -45,17 +36,17 @@ body {
 }
 
 .logo {
-    height: 55px;
+    height: 50px;
     width: auto;
 }
 
-header h1 {
-    font-size: 20px;
+.main-header h1 {
+    font-size: 18px;
     font-weight: 700;
     color: #fff;
 }
 
-/* NAV MENU */
+/* DESKTOP NAV */
 nav {
     display: flex;
     gap: 25px;
@@ -75,9 +66,9 @@ nav a.active {
     border-bottom: 2px solid #73b7ff;
 }
 
-/* -------------------------------
-   MOBILE NAV (汉堡菜单)
----------------------------------*/
+/* --------------------------------
+   HAMBURGER (手机导航按钮)
+-----------------------------------*/
 .hamburger {
     display: none;
     flex-direction: column;
@@ -90,13 +81,8 @@ nav a.active {
     height: 3px;
     background: #fff;
 }
-/* Show hamburger only on mobile */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-}
 
+/* MOBILE NAV MENU */
 .mobile-nav {
     display: none;
     flex-direction: column;
@@ -111,21 +97,35 @@ nav a.active {
     font-size: 18px;
 }
 
-/* -------------------------------
-   PAGE TRANSITION FADE-IN
----------------------------------*/
-.fade-in {
-    animation: fadeIn 0.8s ease forwards;
+.mobile-nav.show {
+    display: flex;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* --------------------------------
+   RESPONSIVE RULES
+-----------------------------------*/
+@media (max-width: 768px) {
+
+    /* 隐藏电脑导航 */
+    nav {
+        display: none;
+    }
+
+    /* 显示汉堡菜单 */
+    .hamburger {
+        display: flex;
+    }
+
+    .main-header h1 {
+        font-size: 15px;
+        max-width: 150px;
+        line-height: 18px;
+    }
 }
 
-/* -------------------------------
+/* --------------------------------
    HERO SECTION
----------------------------------*/
+-----------------------------------*/
 .hero {
     padding: 150px 20px 120px;
     text-align: center;
@@ -160,9 +160,9 @@ nav a.active {
     transform: translateY(-3px);
 }
 
-/* -------------------------------
-   SECTIONS / TITLES
----------------------------------*/
+/* --------------------------------
+   SECTION
+-----------------------------------*/
 section {
     padding: 60px 20px;
 }
@@ -174,9 +174,9 @@ section {
     color: #fff;
 }
 
-/* -------------------------------
-   CARD GRID (Products / Home)
----------------------------------*/
+/* --------------------------------
+   CARD GRID
+-----------------------------------*/
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -198,65 +198,9 @@ section {
     transform: translateY(-8px);
 }
 
-/* -------------------------------
-   TIMELINE (Events)
----------------------------------*/
-.timeline {
-    border-left: 3px solid #73b7ff;
-    padding-left: 30px;
-}
-
-.timeline-item {
-    padding: 15px 0;
-    margin-bottom: 25px;
-    position: relative;
-}
-
-.timeline-item::before {
-    content: "";
-    width: 14px;
-    height: 14px;
-    background: #73b7ff;
-    border-radius: 50%;
-    position: absolute;
-    left: -9px;
-    top: 20px;
-}
-
-/* -------------------------------
-   CONTACT PAGE
----------------------------------*/
-.contact-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-
-.contact-box {
-    background: #102b43;
-    padding: 30px;
-    border-radius: 12px;
-    width: 45%;
-    min-width: 280px;
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-.contact-box input,
-.contact-box textarea {
-    width: 100%;
-    padding: 14px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    background: #1f3d55;
-    border-radius: 8px;
-    border: none;
-    color: #fff;
-}
-
-/* -------------------------------
+/* --------------------------------
    FOOTER
----------------------------------*/
+-----------------------------------*/
 footer {
     background: #041c2c;
     padding: 55px 20px;
@@ -284,9 +228,9 @@ footer {
     border-top: 1px solid #244559;
 }
 
-/* -------------------------------
-   SCROLL REVEAL
----------------------------------*/
+/* --------------------------------
+   SCROLL ANIMATION
+-----------------------------------*/
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -296,50 +240,4 @@ footer {
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* --- MOBILE RESPONSIVE FIXED --- */
-@media (max-width: 768px) {
-    nav {
-        display: none;
-    }
-
-    .hamburger {
-        display: flex;
-        cursor: pointer;
-    }
-
-    .mobile-nav {
-        display: none;
-        flex-direction: column;
-        background: #041c2c;
-        padding: 20px;
-        gap: 18px;
-    }
-
-    .mobile-nav.show {
-        display: flex;
-    }
-
-    .main-header h1 {
-        font-size: 16px;
-        line-height: 20px;
-    }
-
-    .logo {
-        height: 45px;
-    }
-}
-
-
-    .logo-container {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    header h1 {
-        font-size: 16px;
-        line-height: 20px;
-    }
 }
