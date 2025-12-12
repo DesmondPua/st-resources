@@ -3,30 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - ST RESOURCES INDUSTRIES SDN BHD</title>
+    <title>Contact • ST RESOURCES INDUSTRIES SDN BHD</title>
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- reCAPTCHA v3 -->
     <script src="https://www.google.com/recaptcha/api.js?render=6Lc3LCksAAAAAGsKbTo1JUwHE1lz2mc1p-geFLvq"></script>
 
     <script>
-        function onSubmitForm(event) {
-            event.preventDefault();
-
-            grecaptcha.ready(function () {
-                grecaptcha.execute("6Lc3LCksAAAAAGsKbTo1JUwHE1lz2mc1p-geFLvq", { action: "submit" }).then(function(token) {
-
+        function onSubmitForm(e) {
+            e.preventDefault();
+            grecaptcha.ready(function() {
+                grecaptcha.execute("6Lc3LCksAAAAAGsKbTo1JUwHE1lz2mc1p-geFLvq", {action: "submit"}).then(function(token) {
                     document.getElementById("recaptcha_token").value = token;
-
-                    alert("Your message has been submitted (Demo Mode). Backend will be added later.");
+                    document.getElementById("contactForm").submit();
                 });
             });
         }
     </script>
-
 </head>
+
 <body>
 
+<!-- HEADER -->
 <header class="main-header">
     <div class="logo-container">
         <img src="assets/images/Logo.png" alt="Company Logo" class="logo">
@@ -38,7 +36,7 @@
         <a href="about.html">About Us</a>
         <a href="products.html">Products</a>
         <a href="events.html">Events</a>
-        <a href="contact.html" class="active">Contact</a>
+        <a class="active" href="contact.html">Contact</a>
     </nav>
 
     <div class="hamburger" onclick="toggleMenu()">
@@ -56,66 +54,74 @@
 
 <div class="page">
 
-    <section class="reveal">
-        <h2 class="section-title">Contact Us</h2>
-        <p style="text-align:center; opacity:0.8;">
-            Get in touch with us for inquiries, quotations, or technical guidance.
+<!-- TITLE -->
+<section class="reveal">
+    <h2 class="section-title">Contact Us</h2>
+    <p style="text-align:center; opacity:0.8;">
+        Get in touch with us for inquiries, quotations, or technical guidance.
+    </p>
+</section>
+
+<!-- CONTACT + FORM + MAP -->
+<section class="contact-container reveal">
+
+    <!-- Company Info -->
+    <div class="contact-box">
+        <h3>Company Information</h3><br>
+
+        <p><strong>Company:</strong><br> ST Resources Industries Sdn Bhd</p>
+        <p><strong>Email:</strong><br> cs@st-resources.com</p>
+        <p><strong>Phone:</strong><br> +60 12-718 9322</p>
+        <p><strong>Location:</strong><br>
+            No 26, Jalan Cenderai 25,<br>
+            Kawasan Perindustrian Kota Putri,<br>
+            81750 Masai, Johor, Malaysia.
         </p>
-    </section>
+    </div>
 
-    <section class="contact-container reveal">
+    <!-- Contact Form -->
+    <div class="contact-box">
+        <h3>Send Us a Message</h3>
 
-        <!-- LEFT SIDE: Company info -->
-        <div class="contact-box">
-            <h3>Company Information</h3>
-            <p><strong>ST RESOURCES INDUSTRIES SDN BHD</strong></p>
-            <p><strong>Address:</strong><br>No 26, Jalan Cenderai 25,<br>Kawasan Perindustrian Kota Putri,<br>81750 Masai, Johor, Malaysia</p>
-            <p><strong>Email:</strong> cs@st-resources.com</p>
-            <p><strong>Phone:</strong> +60 12-718 9322</p>
+        <form id="contactForm" method="POST" action="#" onsubmit="onSubmitForm(event)">
 
-            <br>
-            <h3>Location Map</h3>
-            <iframe 
-                width="100%" 
-                height="250" 
-                style="border:0; border-radius:10px; margin-top:10px;"
-                loading="lazy"
-                allowfullscreen 
-                referrerpolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDUMMYKEY&zoom=16&q=No+26,+Jalan+Cenderai+25,+Kawasan+Perindustrian+Kota+Putri,+81750+Masai,+Johor,+Malaysia">
-            </iframe>
-        </div>
+            <input type="hidden" id="recaptcha_token" name="recaptcha_token">
 
-        <!-- RIGHT SIDE: Contact Form -->
-        <div class="contact-box">
-            <h3>Send Us a Message</h3>
+            <label>Name</label>
+            <input type="text" name="name" required>
 
-            <form onsubmit="onSubmitForm(event)">
+            <label>Email</label>
+            <input type="email" name="email" required>
 
-                <input type="hidden" id="recaptcha_token" name="recaptcha_token">
+            <label>Phone</label>
+            <input type="text" name="phone">
 
-                <label>Name</label>
-                <input type="text" name="name" required>
+            <label>Message</label>
+            <textarea name="message" rows="5" required></textarea>
 
-                <label>Email</label>
-                <input type="email" name="email" required>
+            <button type="submit" class="btn-primary">Submit</button>
+        </form>
+    </div>
 
-                <label>Phone</label>
-                <input type="text" name="phone" required>
+    <!-- Google Map -->
+    <div class="contact-box" style="width:100%;">
+        <h3>Our Location</h3>
+        <iframe
+            width="100%"
+            height="350"
+            style="border:0; border-radius:10px; margin-top:15px;"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=No%2026,%20Jalan%20Cenderai%2025,%20Kawasan%20Perindustrian%20Kota%20Putri,%2081750%20Masai,%20Johor,%20Malaysia&output=embed">
+        </iframe>
+    </div>
 
-                <label>Message</label>
-                <textarea name="message" rows="5" required></textarea>
-
-                <button type="submit" class="btn-primary" style="width:100%; margin-top:10px;">
-                    Submit
-                </button>
-            </form>
-        </div>
-
-    </section>
+</section>
 
 </div>
 
+<!-- FOOTER -->
 <footer class="footer">
     <div class="footer-container">
 
