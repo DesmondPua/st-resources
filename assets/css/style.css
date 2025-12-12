@@ -312,3 +312,22 @@ footer {
         display: none;
     }
 }
+@media (max-width: 768px) {
+    .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
