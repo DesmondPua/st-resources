@@ -1,1 +1,128 @@
-Events
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - ST RESOURCES INDUSTRIES SDN BHD</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <h1>ST RESOURCES INDUSTRIES SDN BHD</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a class="active" href="events.html">Events</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<div class="page">
+
+    <!-- PAGE BANNER -->
+    <section class="page-banner reveal">
+        <h2>Company Events & Highlights</h2>
+        <p>Key milestones, activities, and industry participation.</p>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section class="reveal">
+        <h3 class="section-title">Our Recent Events</h3>
+
+        <div class="timeline">
+
+            <!-- EVENT 1 -->
+            <div class="timeline-item reveal">
+                <h3>2025 • Industry Expo Participation</h3>
+                <p>
+                    ST Resources Industries showcased our latest polymer material solutions at the
+                    Malaysia Industrial Expo 2025. We introduced new high-performance engineering polymers 
+                    tailored for automotive and electronic applications.
+                </p>
+            </div>
+
+            <!-- EVENT 2 -->
+            <div class="timeline-item reveal">
+                <h3>2024 • Expanded Product Portfolio</h3>
+                <p>
+                    Our product line was expanded to include customized polymer grades designed for 
+                    heat-resistant and high-impact industrial usage.
+                </p>
+            </div>
+
+            <!-- EVENT 3 -->
+            <div class="timeline-item reveal">
+                <h3>2023 • New Warehouse Facility</h3>
+                <p>
+                    We established a larger warehouse to improve inventory capacity and ensure faster 
+                    delivery for clients across Malaysia.
+                </p>
+            </div>
+
+            <!-- EVENT 4 -->
+            <div class="timeline-item reveal">
+                <h3>2022 • Strategic Partnership</h3>
+                <p>
+                    Formed key partnerships with leading material suppliers, enhancing our ability to 
+                    offer high-precision and high-quality polymer materials.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h3>ST RESOURCES INDUSTRIES SDN BHD</h3>
+            <p>Trusted supplier for industrial polymer materials.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <p><a href="index.html">Home</a></p>
+            <p><a href="about.html">About Us</a></p>
+            <p><a href="products.html">Products</a></p>
+            <p><a href="events.html">Events</a></p>
+            <p><a href="contact.html">Contact</a></p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Email: info@stresources.com</p>
+            <p>Phone: +60 123-456 789</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 ST RESOURCES INDUSTRIES SDN BHD. All Rights Reserved.
+    </div>
+</footer>
+
+<!-- SCROLL ANIMATION SCRIPT -->
+<script>
+    const revealElements = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+        for (let el of revealElements) {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 60) {
+                el.classList.add('visible');
+            }
+        }
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+</script>
+
+</body>
+</html>
