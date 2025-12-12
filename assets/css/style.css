@@ -300,3 +300,9 @@ footer {
 .mobile-nav.show {
     display: flex;
 }
+/* Mobile: hide desktop nav */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+}
