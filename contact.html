@@ -3,20 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact — ST RESOURCES INDUSTRIES SDN BHD</title>
+  <title>Contact - ST RESOURCES INDUSTRIES SDN BHD</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- Google reCAPTCHA v2 -->
+  <!-- reCAPTCHA v2 Checkbox -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-
-  <!-- HEADER -->
+  <!-- Header -->
   <header class="main-header">
     <div class="logo-container">
-      <img src="assets/images/Logo.png" alt="Company Logo" class="logo">
+      <img src="assets/images/Logo.png" alt="Company Logo" class="logo" />
       <h1>ST RESOURCES INDUSTRIES SDN BHD</h1>
     </div>
 
@@ -31,6 +29,7 @@
     <div class="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </div>
+
     <div class="mobile-nav" id="mobileNav">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
@@ -40,52 +39,60 @@
     </div>
   </header>
 
+  <!-- Main content -->
   <main class="page">
     <section>
-      <h2 class="section-title" style="text-align:center;">Contact Us</h2>
+      <h2 class="section-title">Contact Us</h2>
 
-      <div class="contact-container">
-
-        <!-- LEFT: FORM -->
-        <div class="contact-box">
+      <div class="contact-layout">
+        <!-- Left: Contact Form -->
+        <div class="contact-box reveal">
           <h3>Send Us a Message</h3>
-          <p style="color:#bfcfd9;">Get in touch for inquiries, quotations or technical guidance.</p>
+          <p class="muted">Get in touch with us for inquiries, quotations or technical guidance.</p>
 
-          <!-- Formspree endpoint (already replaced with your ID) -->
-          <form id="contactForm" action="https://formspree.io/f/mgvgreaj" method="POST" onsubmit="return validateBeforeSubmit()">
-
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="tel" name="phone" placeholder="Your Phone Number" required>
+          <form id="contactForm" class="contact-form" autocomplete="off">
+            <input name="name" type="text" placeholder="Your Name" required>
+            <input name="email" type="email" placeholder="Your Email" required>
+            <input name="phone" type="text" placeholder="Your Phone Number" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
 
-            <!-- reCAPTCHA v2 (your site key) -->
-            <div style="margin:18px 0;">
+            <!-- reCAPTCHA -->
+            <div class="recaptcha-wrap">
               <div class="g-recaptcha" data-sitekey="6LeOMiksAAAAAPtxBjGBLEfUKJjhz8lX0GA4Z1px"></div>
+              <div id="recapError" class="form-error" style="display:none;"></div>
             </div>
 
-            <button type="submit" class="btn-primary">Submit</button>
-          </form>
+            <button id="submitBtn" class="btn-primary" type="submit">Submit</button>
 
-          <p style="font-size:13px;color:#9fb0bf;margin-top:12px;">
-            Or email: <a href="mailto:cs@st-resources.com">cs@st-resources.com</a> — Phone: <a href="tel:+60127189322">+60 12-718 9322</a>
+            <p class="contact-note">
+              Or email: <a href="mailto:cs@st-resources.com">cs@st-resources.com</a> —
+              Phone: <a href="tel:+60127189322">+60 12-718 9322</a>
+            </p>
+
+            <div id="formMessage" class="form-message"></div>
+          </form>
+        </div>
+
+        <!-- Right: Google Map (no API key required) -->
+        <div class="map-box reveal">
+          <iframe
+            width="100%"
+            height="380"
+            style="border:0; border-radius:10px;"
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps?q=No+26+Jalan+Cenderai+25+Kawasan+Perindustrian+Kota+Putri+81750+Masai+Johor+Malaysia&output=embed">
+          </iframe>
+
+          <p class="map-caption">
+            ST RESOURCES INDUSTRIES SDN BHD — No 26, Jalan Cenderai 25, Kawasan Perindustrian Kota Putri, 81750 Masai, Johor, Malaysia
           </p>
         </div>
-
-        <!-- RIGHT: GOOGLE MAP -->
-        <div class="map-box">
-          <iframe
-            width="100%" height="420" frameborder="0" style="border:0"
-            src="https://www.google.com/maps?q=No+26,+Jalan+Cenderai+25,+Kawasan+Perindustrian+Kota+Putri,+81750+Masai,+Johor,+Malaysia&output=embed"
-            allowfullscreen>
-          </iframe>
-        </div>
-
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
     <div class="footer-container">
       <div class="footer-section">
@@ -95,18 +102,14 @@
 
       <div class="footer-section">
         <h4>Quick Links</h4>
-        <p><a href="index.html">Home</a></p>
-        <p><a href="about.html">About Us</a></p>
-        <p><a href="products.html">Products</a></p>
-        <p><a href="events.html">Events</a></p>
-        <p><a href="contact.html">Contact</a></p>
+        <p><a href="index.html">Home</a> · <a href="about.html">About Us</a></p>
+        <p><a href="products.html">Products</a> · <a href="events.html">Events</a></p>
       </div>
 
       <div class="footer-section">
         <h4>Contact</h4>
         <p>Email: <a href="mailto:cs@st-resources.com">cs@st-resources.com</a></p>
         <p>Phone: <a href="tel:+60127189322">+60 12-718 9322</a></p>
-        <p>Address:<br>No 26, Jalan Cenderai 25,<br>Kawasan Perindustrian Kota Putri,<br>81750 Masai, Johor, Malaysia</p>
       </div>
     </div>
 
@@ -115,20 +118,67 @@
     </div>
   </footer>
 
+  <!-- JS -->
   <script>
-    function toggleMenu(){
-      document.getElementById("mobileNav").classList.toggle("show");
+    function toggleMenu() {
+      document.getElementById('mobileNav').classList.toggle('show');
     }
 
-    // reCAPTCHA validation before submit
-    function validateBeforeSubmit(){
-      const response = grecaptcha.getResponse();
-      if(!response){
-        alert("Please complete the reCAPTCHA before submitting the form.");
-        return false;
-      }
-      return true;
-    }
+    // Form + Formspree + reCAPTCHA
+    (function () {
+      const form = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const msg = document.getElementById('formMessage');
+      const recapError = document.getElementById('recapError');
+
+      const FORMSPREE_URL = 'https://formspree.io/f/mgvgreaj';
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        msg.textContent = '';
+        recapError.style.display = 'none';
+
+        const recToken = grecaptcha.getResponse();
+        if (!recToken) {
+          recapError.textContent = 'Please complete the reCAPTCHA.';
+          recapError.style.display = 'block';
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        const payload = {
+          name: form.name.value,
+          email: form.email.value,
+          phone: form.phone.value,
+          message: form.message.value,
+          'g-recaptcha-response': recToken
+        };
+
+        try {
+          const r = await fetch(FORMSPREE_URL, {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          });
+
+          if (r.ok) {
+            window.location.href = "thankyou.html";
+          } else {
+            msg.textContent = "Submission failed. Please try again.";
+          }
+        } catch (e) {
+          msg.textContent = "Network error.";
+        }
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit';
+      });
+    })();
   </script>
 
 </body>
