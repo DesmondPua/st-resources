@@ -319,3 +319,12 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+/* --- FIX CONTACT PAGE INVISIBLE BUG --- */
+main.page section {
+    display: block !important;
+    opacity: 1 !important;
+    color: #ffffff !important;
+    min-height: 200px !important;
+    padding: 60px 20px !important;
+    visibility: visible !important;
+}
