@@ -23,7 +23,7 @@ body {
 /* --------------------------------
    HEADER / NAVBAR
 -----------------------------------*/
-header {
+.main-header {
     width: 100%;
     background: #041c2c;
     position: sticky;
@@ -36,6 +36,7 @@ header {
     border-bottom: 1px solid rgba(255,255,255,0.08);
     backdrop-filter: blur(6px);
 }
+
 
 .logo-container {
     display: flex;
@@ -297,28 +298,39 @@ footer {
     transform: translateY(0);
 }
 
-/* MOBILE RESPONSIVE */
-@media (max-width: 820px) {
-    nav { display: none; }
-    .hamburger { display: flex; }
-    .mobile-nav { display: flex; }
-}
-.mobile-nav.show {
-    display: flex;
-}
-/* Mobile: hide desktop nav */
+/* --- MOBILE RESPONSIVE FIXED --- */
 @media (max-width: 768px) {
     nav {
         display: none;
     }
-}
-@media (max-width: 768px) {
-    .main-header {
+
+    .hamburger {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 20px;
+        cursor: pointer;
     }
+
+    .mobile-nav {
+        display: none;
+        flex-direction: column;
+        background: #041c2c;
+        padding: 20px;
+        gap: 18px;
+    }
+
+    .mobile-nav.show {
+        display: flex;
+    }
+
+    .main-header h1 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .logo {
+        height: 45px;
+    }
+}
+
 
     .logo-container {
         display: flex;
