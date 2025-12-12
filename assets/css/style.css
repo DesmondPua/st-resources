@@ -89,6 +89,12 @@ nav a.active {
     height: 3px;
     background: #fff;
 }
+/* Show hamburger only on mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+}
 
 .mobile-nav {
     display: none;
