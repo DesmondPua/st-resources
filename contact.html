@@ -1,147 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - ST RESOURCES INDUSTRIES SDN BHD</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
+<section>
+    <h2 class="section-title">We Are Here to Help</h2>
 
-<!-- HEADER -->
-<header class="main-header">
-    <div class="logo-container">
-        <img src="assets/images/Logo.png" alt="Company Logo" class="logo">
-        <h1>ST RESOURCES INDUSTRIES SDN BHD</h1>
-    </div>
+    <div class="contact-container">
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="products.html">Products</a>
-        <a href="events.html">Events</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    
-    <div class="hamburger" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
-
-<div class="mobile-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="products.html">Products</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
-</div>
-
-</header>
-
-
-
-<div class="page">
-
-    <!-- BANNER -->
-    <section class="page-banner reveal">
-        <h2>Contact Us</h2>
-        <p>Get in touch with us for inquiries, quotations, or technical guidance.</p>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section class="reveal">
-        <h3 class="section-title">We Are Here to Help</h3>
-
-        <div class="contact-container">
-
-            <!-- CONTACT INFO -->
-            <div class="contact-box reveal">
-                <h3>Company Information</h3>
-                <p><strong>Company:</strong> ST Resources Industries Sdn Bhd</p>
-                <p><strong>Email:</strong> info@stresources.com</p>
-                <p><strong>Phone:</strong> +60 123-456 789</p>
-                <p><strong>Location:</strong> Selangor, Malaysia</p>
-            </div>
-
-            <!-- CONTACT FORM -->
-            <div class="contact-box reveal">
-                <h3>Send Us a Message</h3>
-
-                <form>
-                    <label>Name</label>
-                    <input type="text" placeholder="Your Name" required>
-
-                    <label>Email</label>
-                    <input type="email" placeholder="Your Email" required>
-
-                    <label>Phone</label>
-                    <input type="text" placeholder="Your Phone Number">
-
-                    <label>Message</label>
-                    <textarea rows="5" placeholder="Your Message"></textarea>
-
-                    <button type="submit" class="btn-primary">Submit</button>
-                </form>
-            </div>
-
-        </div>
-    </section>
-
-</div>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-container">
-
-        <div class="footer-section">
-            <h3>ST RESOURCES INDUSTRIES SDN BHD</h3>
-            <p>Your trusted partner for industrial polymer materials.</p>
+        <!-- LEFT: Company Info -->
+        <div class="contact-box">
+            <h3>Company Information</h3>
+            <p><strong>Company:</strong> ST Resources Industries Sdn Bhd</p>
+            <p><strong>Email:</strong> info@stresources.com</p>
+            <p><strong>Phone:</strong> +60 123-456 789</p>
+            <p><strong>Location:</strong> Selangor, Malaysia</p>
         </div>
 
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <p><a href="index.html">Home</a></p>
-            <p><a href="about.html">About Us</a></p>
-            <p><a href="products.html">Products</a></p>
-            <p><a href="events.html">Events</a></p>
-            <p><a href="contact.html">Contact</a></p>
-        </div>
+        <!-- RIGHT: Form -->
+        <div class="contact-box">
+            <h3>Send Us a Message</h3>
 
-        <div class="footer-section">
-            <h3>Contact</h3>
-            <p>Email: info@stresources.com</p>
-            <p>Phone: +60 123-456 789</p>
+            <form>
+
+                <label>Name</label>
+                <input type="text" placeholder="Your Name">
+
+                <label>Email</label>
+                <input type="email" placeholder="Your Email">
+
+                <label>Phone</label>
+                <input type="text" placeholder="Your Phone Number">
+
+                <label>Message</label>
+                <textarea rows="4" placeholder="Your Message"></textarea>
+
+                <button class="btn-primary" type="submit">Submit</button>
+            </form>
+
         </div>
 
     </div>
-
-    <div class="footer-bottom">
-        © 2025 ST RESOURCES INDUSTRIES SDN BHD. All Rights Reserved.
-    </div>
-</footer>
-
-<!-- REVEAL SCRIPT -->
-<script>
-    const revealElements = document.querySelectorAll('.reveal');
-
-    function revealOnScroll() {
-        for (let el of revealElements) {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 60) {
-                el.classList.add('visible');
-            }
-        }
-    }
-
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
-</script>
-<script>
-    function toggleMenu() {
-        document.querySelector(".mobile-nav").classList.toggle("show");
-    }
-</script>
-
-</body>
-</html>
+</section>
