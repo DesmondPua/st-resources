@@ -297,3 +297,6 @@ footer {
     .hamburger { display: flex; }
     .mobile-nav { display: flex; }
 }
+.mobile-nav.show {
+    display: flex;
+}
